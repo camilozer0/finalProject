@@ -6,7 +6,6 @@ import CurrLoc from './CurrLoc'
 
 const Left = ( { handleCity, updateCity, city, iconUrl, dayData, getCurrentLoc }) => {
   
-  
   return (
     <div className='grid justify-center content-around basis-3/12 bg-gray-700'>
         <h1 className='justify-self-center'>Your weather App</h1>

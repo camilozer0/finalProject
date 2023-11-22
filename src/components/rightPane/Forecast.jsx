@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card'
 
-const Forecast = ({ forecast }) => {
+const Forecast = ({ forecast, isMetric }) => {
   return (
     <div className='flex justify-around gap-4'>
       { forecast.map( (forecastDay) => 
@@ -12,6 +12,7 @@ const Forecast = ({ forecast }) => {
         forecastTemp = { forecastDay.fTemp }
         forecastDesc = { forecastDay.fDesc}
         forecastHum = { forecastDay.fHum }
+        isMetric = { isMetric }
         />
         ) }
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = ({ forecastDate, forecastIcon, forecastTemp, forecastDesc, forecastHum  }) => {
+const Card = ({ forecastDate, forecastIcon, forecastTemp, forecastDesc, forecastHum, isMetric  }) => {
   const forecastIc = `https://openweathermap.org/img/wn/${forecastIcon}@4x.png`;
   const options = {
     weekday: 'short',
@@ -16,8 +16,8 @@ const Card = ({ forecastDate, forecastIcon, forecastTemp, forecastDesc, forecast
         <img src={ forecastIc } alt="this is a kitten" />
         <p>{ forecastDesc }</p>
         <div className='grid justify-center'>
-            <p> temp: { forecastTemp }</p>
-            <p> hum: { forecastHum }</p>
+            <p>{forecastTemp.toFixed(0) } { isMetric[1] }</p>
+            <p> hum: { forecastHum } %</p>
         </div>
     </div>
   )
