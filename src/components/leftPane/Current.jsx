@@ -3,8 +3,11 @@ import { BiCurrentLocation } from 'react-icons/bi'
 
 const Current = ({getCurrentLoc}) => {
   return (
-    <div>
-        <button onClick={ getCurrentLoc }><BiCurrentLocation/></button>
+    <div className='bg-slate-600 grid rounded-full px-1'>
+        <button 
+        onClick={ getCurrentLoc }
+        className='text-2xl'
+        ><BiCurrentLocation/></button>
     </div>
   )
 }

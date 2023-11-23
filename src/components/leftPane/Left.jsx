@@ -4,12 +4,12 @@ import Weather from './Weather'
 import WeatherInfo from './WeatherInfo'
 import CurrLoc from './CurrLoc'
 
-const Left = ( { handleCity, updateCity, city, iconUrl, dayData, getCurrentLoc }) => {
+const Left = ( { handleCity, updateCity, city, iconUrl, dayData, getCurrentLoc, isMetric }) => {
   
   return (
     <div className='grid justify-center content-around basis-3/12 bg-gray-700'>
-        <h1 className='justify-self-center'>Your weather App</h1>
-      <div className='flex justify-around gap-16'>
+        <h1 className='justify-self-center text-2xl'>Your weather App</h1>
+      <div className='flex justify-around gap-8'>
         <Search 
         handleCity = { handleCity }
         updateCity = { updateCity }
@@ -23,6 +23,7 @@ const Left = ( { handleCity, updateCity, city, iconUrl, dayData, getCurrentLoc }
       </div>
       <Weather
         dayData = { dayData }
+        isMetric = { isMetric }
       />
         <WeatherInfo
         dayData = { dayData }

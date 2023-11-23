@@ -6,11 +6,12 @@ const Search = ( { handleCity, updateCity }) => {
 
   return (
     <div className='flex gap-2'>
-    <button 
+    <button
+    className='text-xl'
     onClick={ handleCity }
     ><TbWorldSearch/></button>
     <input 
-    className='text-stone-900'
+    className='text-zinc-900 text-xl rounded-full px-4 bg-slate-200'
     /* ref={ inputVal } */
     onChange={ updateCity }
     maxLength="30"

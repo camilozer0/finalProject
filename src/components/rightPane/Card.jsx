@@ -16,8 +16,8 @@ const Card = ({ forecastDate, forecastIcon, forecastTemp, forecastDesc, forecast
         <img src={ forecastIc } alt="this is a kitten" />
         <p>{ forecastDesc }</p>
         <div className='grid justify-center'>
-            <p>{forecastTemp.toFixed(0) } { isMetric[1] }</p>
-            <p> hum: { forecastHum } %</p>
+            <p className='grid justify-center'>{forecastTemp.toFixed(0) } { isMetric[1] }</p>
+            <p className='grid justify-center'>{ forecastHum }% hum</p>
         </div>
     </div>
   )

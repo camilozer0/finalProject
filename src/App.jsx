@@ -121,6 +121,7 @@ function App() {
       iconUrl = { iconUrl }
       dayData = { dayData }
       getCurrentLoc = { getCurrentLoc }
+      isMetric = { isMetric }
       />
       <Right
       forecast = { forecast }
