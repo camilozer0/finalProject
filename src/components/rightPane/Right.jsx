@@ -17,7 +17,7 @@ const Right = ({ forecast, dayData, handleMetric, handleImperial, isMetric }) =>
       forecast = { forecast }
       isMetric = { isMetric }
       />
-      <h2 className='place-self-center'>Highlights from today</h2>
+      <h2 className='place-self-center text-xl font-normal'>Highlights from today</h2>
      <Highlights
      dayData = { dayData }
      isMetric = { isMetric }

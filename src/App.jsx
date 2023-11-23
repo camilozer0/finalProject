@@ -12,7 +12,7 @@ function App() {
   const [ iconUrl, setIconUrl ] = useState('');
   const [ forecast, setForecast ] = useState([]);
   const [ dayData, setDayData ] = useState([]);
-  const [ isMetric, setIsMetric ] = useState(['metric', 'ºC', true]);
+  const [ isMetric, setIsMetric ] = useState(['metric', 'ºC', true, 'm/s']);
 
     let forecastFive = [];
 
@@ -26,15 +26,13 @@ function App() {
   useEffect(() => {
     if (weatherData) {  
       forecastFive = [];
-      let {city: {name}, list: {0: {dt_txt, main: {feels_like, humidity, temp, temp_max, temp_min}, weather: {0: {description, icon, main}}, wind: {deg, gust, speed}}}} = weatherData;
+      let {city: {name}, list: {0: {dt_txt, main: {feels_like, humidity, temp}, weather: {0: {description, icon, main}}, wind: {deg, gust, speed}}}} = weatherData;
       let daytimeData = {
         dName: name,
         dDate: dt_txt,
         dLike: feels_like,
         dHum: humidity,
         dTemp: temp,
-        dMax: temp_max,
-        dMin: temp_min,
         dDesc: description,
         dIcon: icon,
         dMain: main,
@@ -77,11 +75,11 @@ function App() {
   }
 
   const handleMetric = () => {
-    setIsMetric(['metric', 'ºC', true]);
+    setIsMetric(['metric', 'ºC', true, 'm/s']);
   }
 
   const handleImperial = () => {
-    setIsMetric(['imperial', 'ºF', false]);
+    setIsMetric(['imperial', 'ºF', false, 'mph']);
   }
 
   useEffect(() => {
@@ -104,7 +102,7 @@ function App() {
         fetchCity( latitude, longitude)
         .then((cityData) => {
           setCity(cityData[0].name);
-          setIsMetric(['metric', 'ºC', true]);
+          setIsMetric(['metric', 'ºC', true, 'm/s']);
         })
         console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
       });
