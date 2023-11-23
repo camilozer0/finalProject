@@ -2,8 +2,8 @@ import React from 'react'
 
 const Copypright = () => {
   return (
-    <div>
-        created by Andres Camilo Mazorra
+    <div className='flex justify-end'>
+        created by &nbsp;<span className='italic font-medium'>Andres Camilo Mazorra</span>
     </div>
   )
 }

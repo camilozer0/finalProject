@@ -6,7 +6,6 @@ import fetchWeather from './helpers/fetchWeather';
 import fetchCity from './helpers/fetchCity';
 
 function App() {
-  //const inputVal = useRef();
   const [ city, setCity ] = useState('medellin');
   const [ weatherData, setWeatherData ] = useState(null);
   const [ iconUrl, setIconUrl ] = useState('');
@@ -14,7 +13,7 @@ function App() {
   const [ dayData, setDayData ] = useState([]);
   const [ isMetric, setIsMetric ] = useState(['metric', 'ºC', true, 'm/s']);
 
-    let forecastFive = [];
+  let forecastFive = [];
 
   // Aca se ejecuta la actualizacion de la ciudad para la busqueda.
   const updateCity = (event) => {
@@ -62,11 +61,9 @@ function App() {
     }
     setForecast(forecastFive)
   }, [weatherData])
- 
 
-  // Trae la informacion de la ciudad (en sistema metrico y sistema imperial) (falta arreglar)
+  // Trae la informacion de la ciudad (en sistema metrico y sistema imperial)
   const handleCity = () => {
-    console.log('handleCity', isMetric)
     fetchWeather(city, isMetric)
     .then((data) => {
       setWeatherData(data);
@@ -74,6 +71,7 @@ function App() {
     .catch( (er) =>  console.log(er))
   }
 
+  // Actualiza el sistema de medidas en el cual se muestran los datos
   const handleMetric = () => {
     setIsMetric(['metric', 'ºC', true, 'm/s']);
   }
@@ -82,16 +80,11 @@ function App() {
     setIsMetric(['imperial', 'ºF', false, 'mph']);
   }
 
+  // Se ejecuta cada vez que cambian las unidades de medida
   useEffect(() => {
     handleCity();
   }, [isMetric]);
 
-  console.log(weatherData, dayData)
-  
-
-  // hace un useEffect que dispare la consulta cada que cambie el isMetric
-  // Hacer dos posiciones y consultar dependiendo del valor de isMetric
-  // Cargar estado inicial
   
   // sacar la informacion necesaria para pintar la pagina (falta arreglar)
   const getCurrentLoc = () => {

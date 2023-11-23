@@ -29,7 +29,7 @@ const Left = ( { handleCity, updateCity, city, iconUrl, dayData, getCurrentLoc, 
         dayData = { dayData }
         />
       <CurrLoc
-      city = { city }
+      dayData = { dayData }
       />
     </div>
   )

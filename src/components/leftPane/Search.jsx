@@ -11,7 +11,7 @@ const Search = ( { handleCity, updateCity }) => {
     onClick={ handleCity }
     ><TbWorldSearch/></button>
     <input 
-    className='text-zinc-900 text-xl rounded-full px-4 bg-slate-200'
+    className='text-gray-900 font-medium text-xl rounded-full px-4 bg-slate-200'
     /* ref={ inputVal } */
     onChange={ updateCity }
     maxLength="30"

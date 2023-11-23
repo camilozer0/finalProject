@@ -1,7 +1,6 @@
 import React from 'react'
 
 const WeatherInfo = ({ dayData }) => {
-  //const todayDate = new Date().toDateString();
   const options = {
     weekday: 'short',
     month: 'short',
