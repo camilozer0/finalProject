@@ -11,6 +11,7 @@ const Right = ({ forecast, dayData, handleMetric, handleImperial, isMetric }) =>
       <Degrees
       handleMetric = { handleMetric }
       handleImperial = { handleImperial }
+      isMetric = { isMetric[2] }
       />
       <Forecast
       forecast = { forecast }

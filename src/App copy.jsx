@@ -69,7 +69,7 @@ function App() {
   // Trae la informacion de la ciudad (en sistema metrico y sistema imperial) (falta arreglar)
   const handleCity = () => {
     console.log('handleCity', isMetric)
-    fetchWeather(city, isMetric)
+    fetchWeather5(city, isMetric)
     .then((data) => {
       setWeatherData(data);
     })

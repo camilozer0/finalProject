@@ -1,7 +1,7 @@
 import React from 'react'
 import { BiCurrentLocation } from 'react-icons/bi'
 
-const Current = ({getCurrentLoc}) => {
+const Current = ({ getCurrentLoc }) => {
   return (
     <div className='bg-slate-600 grid rounded-full px-1'>
         <button 
