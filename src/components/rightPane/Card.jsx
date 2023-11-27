@@ -11,9 +11,9 @@ const Card = ({ forecastDate, forecastIcon, forecastTemp, forecastDesc, forecast
   const dateF = new Date(forecastDa);
   const dateLast = dateF.toLocaleString("en-US", options);
   return (
-    <div className='grid justify-items-center bg-gray-800 p-3'>
+    <div className='grid justify-items-center bg-gray-800 p-3 mb-4'>
         <p>{ dateLast }</p>
-        <img src={ forecastIc } alt="this is a kitten" />
+        <img src={ forecastIc } alt="weather forecast" />
         <p>{ forecastDesc }</p>
         <div className='grid justify-center'>
             <p className='grid justify-center'>{forecastTemp.toFixed(0) } { isMetric[1] }</p>

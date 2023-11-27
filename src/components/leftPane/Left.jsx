@@ -8,8 +8,8 @@ const Left = ( { handleCity, updateCity, city, iconUrl, dayData, getCurrentLoc, 
   
   return (
     <div className='grid justify-center content-around basis-3/12 bg-gray-700'>
-        <h1 className='justify-self-center text-2xl'>Your weather App</h1>
-      <div className='flex justify-around gap-8'>
+        <h1 className='justify-self-center text-2xl m-4 sm:m-0'>Your weather App</h1>
+      <div className='grid gap-4 place-items-center sm:flex justify-around sm:justify-between sm:gap-8'>
         <Search 
         handleCity = { handleCity }
         updateCity = { updateCity }

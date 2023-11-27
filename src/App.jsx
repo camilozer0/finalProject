@@ -13,7 +13,7 @@ function App() {
   const [ dayData, setDayData ] = useState([]);
   const [ isMetric, setIsMetric ] = useState(['metric', 'ºC', true, 'm/s']);
 
-  let forecastFive = [];
+  //let forecastFive = [];
 
   // Aca se ejecuta la actualizacion de la ciudad para la busqueda.
   const updateCity = (event) => {
@@ -23,8 +23,9 @@ function App() {
 
   // Se verifica que existan los datos de tiempo para generar los datos del dia y el arreglo con los datos de los cinco dias siguientes
   useEffect(() => {
-    if (weatherData) {  
-      forecastFive = [];
+    if (weatherData) {
+      if (weatherData.cod != 404) {
+      let forecastFive = [];
       let {city: {name}, list: {0: {dt_txt, main: {feels_like, humidity, temp}, weather: {0: {description, icon, main}}, wind: {deg, gust, speed}}}} = weatherData;
       let daytimeData = {
         dName: name,
@@ -58,8 +59,12 @@ function App() {
         forecastTemp.fHum = humidity;
         forecastFive.push(forecastTemp);
       }
+      setForecast(forecastFive)
+    } else {
+      alert('digite una ciudad valida')
     }
-    setForecast(forecastFive)
+  }  
+    
   }, [weatherData])
 
   // Trae la informacion de la ciudad (en sistema metrico y sistema imperial)
@@ -105,7 +110,7 @@ function App() {
   }
 
   return (
-    <div className='flex flex-row h-screen'>
+    <div className='grid sm:flex sm:flex-row lg:h-screen'>
       <Left 
       handleCity = { handleCity }
       updateCity = { updateCity }

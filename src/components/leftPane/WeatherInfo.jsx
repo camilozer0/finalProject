@@ -9,7 +9,7 @@ const WeatherInfo = ({ dayData }) => {
   const todayDate = new Date();
   const tDate = todayDate.toLocaleString("en-US", options);
   return (
-    <div className='grid justify-center'>    
+    <div className='grid justify-center m-2 sm:m-0'>    
         <p> Today * { (dayData) && tDate } </p>    
     </div>
   )

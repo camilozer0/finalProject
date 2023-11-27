@@ -2,7 +2,7 @@ import React from 'react'
 
 const Highlights = ({ dayData, isMetric }) => {
   return (
-    <div className='grid justify-around grid-cols-2 row-span-1 gap-9'>
+    <div className='grid justify-around grid-cols-1 sm:grid-cols-2 row-span-1 gap-9'>
         <div className='grid justify-items-center bg-gray-800 p-6'>
             <h2>Feels like</h2>
             <p className='text-4xl'>{ dayData.dLike } <span className='text-xl'>{ isMetric[1] }</span></p>
