@@ -26,9 +26,10 @@ function App() {
     if (weatherData) {
       if (weatherData.cod != 404) {
       let forecastFive = [];
-      let {city: {name}, list: {0: {dt_txt, main: {feels_like, humidity, temp}, weather: {0: {description, icon, main}}, wind: {deg, gust, speed}}}} = weatherData;
+      let {city: {name, timezone}, list: {0: {dt_txt, main: {feels_like, humidity, temp}, weather: {0: {description, icon, main}}, wind: {deg, gust, speed}}}} = weatherData;
       let daytimeData = {
         dName: name,
+        dTimezone: timezone,
         dDate: dt_txt,
         dLike: feels_like,
         dHum: humidity,
@@ -41,6 +42,7 @@ function App() {
         dSpeed: speed
       }
       setDayData(daytimeData);
+      console.log(daytimeData)
       setIconUrl(`https://openweathermap.org/img/wn/${icon}@4x.png`);
       for (let i = 7; i <= weatherData.list.length; i = i + 8) {
         let forecastTemp = {
@@ -64,7 +66,6 @@ function App() {
       alert('digite una ciudad valida')
     }
   }  
-    
   }, [weatherData])
 
   // Trae la informacion de la ciudad (en sistema metrico y sistema imperial)
@@ -102,7 +103,7 @@ function App() {
           setCity(cityData[0].name);
           setIsMetric(['metric', 'ºC', true, 'm/s']);
         })
-        console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+        //console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
       });
     } else {
       console.log("Geolocation is not supported by this browser.");

@@ -4,11 +4,9 @@ const fetchWeather = async (city, isMetric) => {
     try {
         const response = await fetch(URL);
         const infoWeather = await response.json();
-        console.log('todo bien')
         return infoWeather;
     } catch (error) {
         alert('ingrese el nombre de una ciudad valida');
-        console.log('hubo un error')
     }
 }
 
