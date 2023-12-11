@@ -6,12 +6,12 @@ const WeatherInfo = ({ dayData }) => {
   const todayDate = new Date();
 
   useEffect(() => {
-  const utcHours = todayDate.getUTCHours();
+  let utcHours = todayDate.getUTCHours();
   const utcMin = todayDate.getMinutes();
   const utcSec = todayDate.getUTCSeconds();
-  const cityHours = utcHours + (dayData.dTimezone / 3600);
-  setCityTime(`${cityHours}:${utcMin}:${utcSec}`);
-  console.log(utcHours);
+  let cityHours = utcHours + (dayData.dTimezone / 3600);
+  if (cityHours >= 24) cityHours = 0;
+  setCityTime(`${cityHours}:${utcMin}`);
     }, [todayDate])
   
   
